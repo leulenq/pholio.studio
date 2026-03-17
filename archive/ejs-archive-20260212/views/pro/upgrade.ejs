@@ -1,0 +1,545 @@
+<!-- Editorial Hero Section -->
+<section class="upgrade-hero">
+  <div class="upgrade-hero__container">
+    <span class="upgrade-hero__badge">Studio+</span>
+    <h1 class="upgrade-hero__headline">
+      <span class="upgrade-hero__headline-main">Upgrade to Studio+.</span>
+      <span class="upgrade-hero__headline-sub">Everything you need for a professional portfolio.</span>
+    </h1>
+    <p class="upgrade-hero__subheadline">Unlock watermark-free PDFs, advanced analytics, and priority support.</p>
+    <div class="upgrade-hero__pricing">
+      <span class="upgrade-hero__pricing-amount">$9.99<span class="upgrade-hero__pricing-period">/month</span></span>
+      <span class="upgrade-hero__pricing-trial">14-day free trial</span>
+      <span class="upgrade-hero__pricing-note">Cancel anytime</span>
+    </div>
+    <div class="upgrade-hero__accent"></div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="upgrade-features">
+  <div class="upgrade-features__container">
+    <div class="upgrade-features__header">
+      <h2 class="upgrade-features__title">Studio+ Features</h2>
+      <p class="upgrade-features__subtitle">Everything you need for a professional modeling career</p>
+    </div>
+    
+    <div class="upgrade-features__grid">
+      <div class="upgrade-feature-card">
+        <div class="upgrade-feature-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+        <h3 class="upgrade-feature-card__title">Custom Branding</h3>
+        <p class="upgrade-feature-card__description">No watermarks. Full control over colors, fonts, and branding. Make it truly yours.</p>
+      </div>
+
+      <div class="upgrade-feature-card">
+        <div class="upgrade-feature-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+        </div>
+        <h3 class="upgrade-feature-card__title">Full Analytics</h3>
+        <p class="upgrade-feature-card__description">Track portfolio views, PDF downloads, and engagement metrics to optimize your presence.</p>
+      </div>
+
+      <div class="upgrade-feature-card">
+        <div class="upgrade-feature-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </div>
+        <h3 class="upgrade-feature-card__title">Custom Domain</h3>
+        <p class="upgrade-feature-card__description">Your own branded link: <strong>yourname.pholio.studio</strong>. Share with confidence.</p>
+      </div>
+
+      <div class="upgrade-feature-card">
+        <div class="upgrade-feature-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+          </svg>
+        </div>
+        <h3 class="upgrade-feature-card__title">Advanced AI Processing</h3>
+        <p class="upgrade-feature-card__description">Enhanced processing and refinement for your portfolio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% const hasActiveSubscription = subscription && (subscription.status === 'trialing' || subscription.status === 'active'); %>
+
+<!-- Subscription Status / Get Started Section -->
+<section class="upgrade-subscription">
+  <div class="upgrade-subscription__container">
+    <% if (hasActiveSubscription) { %>
+      <!-- Active Subscription / Trial Status -->
+      <div class="upgrade-subscription__status">
+        <% if (isInTrial && trialDaysRemaining !== null) { %>
+          <div class="upgrade-status-card upgrade-status-card--trial">
+            <div class="upgrade-status-card__icon">⏱</div>
+            <div class="upgrade-status-card__content">
+              <h3 class="upgrade-status-card__title">Free Trial Active</h3>
+              <p class="upgrade-status-card__description">
+                Your 14-day free trial is active. <strong><%= trialDaysRemaining %> <%= trialDaysRemaining === 1 ? 'day' : 'days' %> remaining</strong>.
+              </p>
+              <p class="upgrade-status-card__note">
+                After your trial ends, you'll be charged $9.99/month. Cancel anytime.
+              </p>
+            </div>
+          </div>
+        <% } else if (subscription.status === 'active') { %>
+          <div class="upgrade-status-card upgrade-status-card--active">
+            <div class="upgrade-status-card__icon">✓</div>
+            <div class="upgrade-status-card__content">
+              <h3 class="upgrade-status-card__title">Studio+ Subscription Active</h3>
+              <p class="upgrade-status-card__description">
+                <% if (isCanceling) { %>
+                  Your subscription will be canceled at the end of the current billing period.
+                <% } else { %>
+                  Your subscription is active and you have access to all Studio+ features.
+                <% } %>
+              </p>
+              <% if (subscription.current_period_end) { %>
+                <% const periodEnd = new Date(subscription.current_period_end); %>
+                <p class="upgrade-status-card__note">
+                  Next billing date: <strong><%= periodEnd.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) %></strong>
+                </p>
+              <% } %>
+            </div>
+          </div>
+        <% } %>
+
+        <% if (subscription.status === 'past_due' || subscription.status === 'unpaid') { %>
+          <div class="upgrade-status-card upgrade-status-card--warning">
+            <div class="upgrade-status-card__icon">⚠</div>
+            <div class="upgrade-status-card__content">
+              <h3 class="upgrade-status-card__title">Payment Required</h3>
+              <p class="upgrade-status-card__description">
+                There was an issue with your payment. Please update your payment method to continue your Studio+ subscription.
+              </p>
+            </div>
+          </div>
+        <% } %>
+
+        <div class="upgrade-subscription__actions">
+          <a href="/stripe/customer-portal" class="button button-primary">Manage Billing</a>
+          <a href="/dashboard/talent" class="button button-secondary">Return to Dashboard</a>
+        </div>
+      </div>
+    <% } else { %>
+      <!-- No Subscription - Start Trial -->
+      <div class="upgrade-subscription__start">
+        <div class="upgrade-subscription__trial-badge">14-Day Free Trial</div>
+          <p class="upgrade-subscription__trial-description">
+            Start your free trial today. Credit card required—you won't be charged during your 14-day trial.
+            After 14 days, you'll be charged $9.99/month. Cancel anytime, no questions asked.
+          </p>
+
+        <div class="upgrade-subscription__actions">
+          <button id="start-trial-btn" class="button button-primary button-large">
+            Start 14-Day Free Trial
+          </button>
+          <a href="/dashboard/talent" class="button button-secondary">Return to Dashboard</a>
+        </div>
+
+        <p class="upgrade-subscription__security-note">
+          🔒 Secure checkout powered by Stripe. Your payment information is encrypted and secure.
+        </p>
+      </div>
+    <% } %>
+  </div>
+</section>
+
+<script>
+  // Handle Start Trial button click
+  const startTrialBtn = document.getElementById('start-trial-btn');
+  if (startTrialBtn) {
+    startTrialBtn.addEventListener('click', async function() {
+      startTrialBtn.disabled = true;
+      startTrialBtn.textContent = 'Processing...';
+
+      try {
+        const response = await fetch('/stripe/create-checkout-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'same-origin'
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.error || 'Failed to create checkout session');
+        }
+
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          throw new Error('No checkout URL received');
+        }
+      } catch (error) {
+        console.error('[Pro Upgrade] Error starting trial:', error);
+        alert('There was an error starting your trial. Please try again or contact support.');
+        startTrialBtn.disabled = false;
+        startTrialBtn.textContent = 'Start 14-Day Free Trial';
+      }
+    });
+  }
+</script>
+
+<style>
+  /* Hero Section */
+  .upgrade-hero {
+    padding: 8rem 2rem 5rem;
+    padding-top: calc(8rem + var(--header-height, 80px));
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 1));
+    position: relative;
+    overflow: hidden;
+  }
+
+  .upgrade-hero__container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .upgrade-hero__badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--accent-gold, #C9A55A);
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .upgrade-hero__headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 0 0 24px 0;
+    color: var(--text-primary, #1a1a1a);
+  }
+
+  .upgrade-hero__headline-main {
+    display: block;
+  }
+
+  .upgrade-hero__headline-sub {
+    display: block;
+    font-weight: 300;
+    font-style: italic;
+    margin-top: 8px;
+    opacity: 0.9;
+  }
+
+  .upgrade-hero__subheadline {
+    font-size: 18px;
+    color: var(--text-secondary, #666);
+    line-height: 1.6;
+    margin: 0 0 32px 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .upgrade-hero__pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+
+  .upgrade-hero__pricing-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 600;
+    color: var(--text-primary, #1a1a1a);
+    line-height: 1;
+  }
+
+  .upgrade-hero__pricing-period {
+    font-size: 24px;
+    font-weight: 400;
+    opacity: 0.7;
+  }
+
+  .upgrade-hero__pricing-trial {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent-gold, #C9A55A);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .upgrade-hero__pricing-note {
+    font-size: 14px;
+    color: var(--text-tertiary, #999);
+  }
+
+  .upgrade-hero__accent {
+    width: 120px;
+    height: 1px;
+    background: var(--accent-gold, #C9A55A);
+    margin: 32px auto 0;
+  }
+
+  /* Features Section */
+  .upgrade-features {
+    padding: 6rem 2rem;
+    background: #FFFFFF;
+  }
+
+  .upgrade-features__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .upgrade-features__header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .upgrade-features__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: var(--text-primary, #1a1a1a);
+    margin: 0 0 12px 0;
+  }
+
+  .upgrade-features__subtitle {
+    font-size: 18px;
+    color: var(--text-secondary, #666);
+    margin: 0;
+  }
+
+  .upgrade-features__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+  }
+
+  .upgrade-feature-card {
+    padding: 32px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .upgrade-feature-card:hover {
+    border-color: var(--accent-gold, #C9A55A);
+    box-shadow: 0 4px 20px rgba(201, 165, 90, 0.1);
+  }
+
+  .upgrade-feature-card__icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(201, 165, 90, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--accent-gold, #C9A55A);
+  }
+
+  .upgrade-feature-card__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--text-primary, #1a1a1a);
+    margin: 0 0 12px 0;
+  }
+
+  .upgrade-feature-card__description {
+    font-size: 15px;
+    color: var(--text-secondary, #666);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Subscription Section */
+  .upgrade-subscription {
+    padding: 6rem 2rem;
+    background: linear-gradient(to bottom, #FFFFFF, rgba(250, 250, 250, 0.5));
+  }
+
+  .upgrade-subscription__container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .upgrade-subscription__status,
+  .upgrade-subscription__start {
+    text-align: center;
+  }
+
+  .upgrade-status-card {
+    display: flex;
+    gap: 20px;
+    padding: 32px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    margin-bottom: 32px;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .upgrade-status-card--trial {
+    border-color: var(--accent-gold, #C9A55A);
+    background: rgba(201, 165, 90, 0.03);
+  }
+
+  .upgrade-status-card--active {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.03);
+  }
+
+  .upgrade-status-card--warning {
+    border-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.03);
+  }
+
+  .upgrade-status-card__icon {
+    font-size: 28px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: rgba(201, 165, 90, 0.1);
+    color: var(--accent-gold, #C9A55A);
+  }
+
+  .upgrade-status-card--active .upgrade-status-card__icon {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+  }
+
+  .upgrade-status-card--warning .upgrade-status-card__icon {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+  }
+
+  .upgrade-status-card__content {
+    flex: 1;
+  }
+
+  .upgrade-status-card__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--text-primary, #1a1a1a);
+    margin: 0 0 12px 0;
+  }
+
+  .upgrade-status-card__description {
+    font-size: 16px;
+    color: var(--text-secondary, #666);
+    line-height: 1.6;
+    margin: 0 0 8px 0;
+  }
+
+  .upgrade-status-card__note {
+    font-size: 14px;
+    color: var(--text-tertiary, #999);
+    margin: 0;
+  }
+
+  .upgrade-subscription__trial-badge {
+    display: inline-block;
+    padding: 10px 24px;
+    background: var(--accent-gold, #C9A55A);
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 24px;
+    margin-bottom: 24px;
+  }
+
+  .upgrade-subscription__trial-description {
+    font-size: 18px;
+    color: var(--text-secondary, #666);
+    line-height: 1.7;
+    margin: 0 0 32px 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .upgrade-subscription__actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .upgrade-subscription__security-note {
+    font-size: 14px;
+    color: var(--text-tertiary, #999);
+    margin: 0;
+  }
+
+  .button-large {
+    padding: 16px 32px;
+    font-size: 16px;
+  }
+
+  #start-trial-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .upgrade-hero {
+      padding: 6rem 1.5rem 4rem;
+      padding-top: calc(6rem + var(--header-height, 80px));
+    }
+
+    .upgrade-features {
+      padding: 4rem 1.5rem;
+    }
+
+    .upgrade-features__grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .upgrade-subscription {
+      padding: 4rem 1.5rem;
+    }
+
+    .upgrade-status-card {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .upgrade-subscription__actions {
+      flex-direction: column;
+    }
+
+    .upgrade-subscription__actions .button {
+      width: 100%;
+    }
+  }
+</style>

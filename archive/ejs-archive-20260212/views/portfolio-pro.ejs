@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= typeof title !== 'undefined' ? title : 'Portfolio' %></title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@200;300;400;500;600;700&family=Noto+Serif+Display:wght@200;300;400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/styles/global.css">
+  <link rel="stylesheet" href="/styles/portfolio-pro.css">
+  <style>
+    /* Prevent flash of unstyled content */
+    body { opacity: 0; transition: opacity 0.3s ease; }
+    body.loaded { opacity: 1; }
+  </style>
+</head>
+<body class="portfolio-pro-body">
+  <!-- Subtle background texture - Editorial Style -->
+  <div class="portfolio-pro-bg">
+    <div class="portfolio-pro-bg__gradient"></div>
+  </div>
+
+  <!-- Main content area -->
+  <main class="portfolio-pro-main">
+    <%- body %>
+  </main>
+
+  <!-- Scripts -->
+  <script src="/scripts/portfolio-pro.js" defer></script>
+  <script>
+    // Prevent flash of unstyled content
+    document.addEventListener('DOMContentLoaded', function() {
+      document.body.classList.add('loaded');
+    });
+  </script>
+</body>
+</html>
+

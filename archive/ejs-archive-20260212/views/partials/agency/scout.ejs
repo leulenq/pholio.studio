@@ -1,0 +1,22 @@
+      <!-- Scout Talent Grid View -->
+      <div class="discover-grid-container discover-view discover-view--grid" id="discover-talent-grid">
+        <div class="discover-grid">
+          <% safeProfiles.forEach((profile, index) => { %>
+            <%- include('./discover-card', { profile, index }) %>
+          <% }); %>
+        </div>
+        
+        <% if (safeProfiles.length === 0) { %>
+          <div class="discover-empty">
+            <div class="discover-empty__icon">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.35-4.35"/>
+              </svg>
+            </div>
+            <h3 class="discover-empty__title discover-title">No talent found</h3>
+            <p class="discover-empty__text discover-body">Try adjusting your filters or ask Pholio Intelligence for something else.</p>
+            <button class="discover-empty__action" id="scout-reset-filters-btn">Clear Filters</button>
+          </div>
+        <% } %>
+      </div>

@@ -1,0 +1,418 @@
+<!-- Editorial Header: Compact and elegant -->
+<section class="features-header" id="features-header">
+  <div class="features-header__container">
+    <span class="features-header__badge">Product Features</span>
+    <h1 class="features-header__headline">
+      <span class="features-header__headline-fashion">Editorial precision.</span>
+      <span class="features-header__headline-ai">AI-powered.</span>
+    </h1>
+    <p class="features-header__subheadline">Four pillars that transform how talent and agencies work together.</p>
+    <div class="features-header__accent"></div>
+  </div>
+</section>
+
+<!-- Feature 1: The AI "Brain" (Curation Engine) -->
+<section class="feature-spread feature-spread--ai-brain" id="feature-ai-brain">
+  <div class="feature-spread__container">
+    <div class="feature-spread__header">
+      <span class="feature-spread__number">01</span>
+      <h2 class="feature-spread__title">The AI Brain</h2>
+      <p class="feature-spread__subtitle">Raw input. Refined output.</p>
+      <p class="feature-spread__description">Our curation engine understands editorial standards. Every bio is polished,
+        every stat is standardized, every detail is perfect.</p>
+    </div>
+
+    <div class="feature-demo feature-demo--transformation">
+      <div class="feature-demo__split">
+        <!-- Left: Input -->
+        <div class="feature-demo__panel feature-demo__panel--input">
+          <div class="feature-demo__label">Raw Input</div>
+          <textarea id="bio-input" class="feature-demo__textarea"
+            placeholder="I'm Elara, I love editorial and commercial work. I'm based in LA and available for bookings."
+            rows="6">I'm Elara, I love editorial and commercial work. I'm based in LA and available for bookings.</textarea>
+          <div class="feature-demo__stats-input">
+            <div class="feature-demo__stat-item">
+              <span class="feature-demo__stat-label">Height:</span>
+              <span class="feature-demo__stat-value">5'11"</span>
+            </div>
+            <div class="feature-demo__stat-item">
+              <span class="feature-demo__stat-label">Measurements:</span>
+              <span class="feature-demo__stat-value">32-25-35</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Output -->
+        <div class="feature-demo__panel feature-demo__panel--output">
+          <div class="feature-demo__label">AI-Refined Output</div>
+          <div class="feature-demo__output" id="bio-output">
+            <p class="feature-demo__output-text" id="bio-output-text"></p>
+          </div>
+          <div class="feature-demo__stats-output">
+            <div class="feature-demo__stat-item">
+              <span class="feature-demo__stat-label">Height:</span>
+              <span class="feature-demo__stat-value" id="height-output">5' 11" / 180cm</span>
+            </div>
+            <div class="feature-demo__stat-item">
+              <span class="feature-demo__stat-label">Measurements:</span>
+              <span class="feature-demo__stat-value" id="measurements-output">32-25-35</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-demo__sparkle" id="transformation-sparkle"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature 2: Instant PDF Comp Card -->
+<section class="feature-spread feature-spread--pdf-themes" id="feature-pdf-themes">
+  <div class="feature-spread__container">
+    <div class="feature-spread__header">
+      <span class="feature-spread__number">02</span>
+      <h2 class="feature-spread__title">Editorial Themes</h2>
+      <p class="feature-spread__subtitle">Choose your editorial theme. Instant delivery.</p>
+      <p class="feature-spread__description">Free users get Ink. Studio+ unlocks Noir, Studio, Archive, and more. Every comp
+        card is publication-ready.</p>
+    </div>
+
+    <div class="feature-demo feature-demo--themes">
+      <div class="feature-demo__themes-header">
+        <h3 class="feature-demo__themes-title">Choose Your Editorial Theme</h3>
+      </div>
+      <div class="feature-demo__themes-gallery" id="themes-gallery">
+        <div class="theme-card" data-theme="ink" data-pro="false">
+          <div class="theme-card__preview">
+            <div class="theme-card__preview-bg" style="background: #FAF9F7;"></div>
+            <div class="theme-card__preview-content">
+              <div class="theme-card__preview-name">ELARA KEATS</div>
+              <div class="theme-card__preview-stats">5' 11" / 180cm</div>
+            </div>
+          </div>
+          <div class="theme-card__name">Ink</div>
+          <div class="theme-card__badge theme-card__badge--free">Free</div>
+        </div>
+
+        <div class="theme-card" data-theme="noir" data-pro="true">
+          <div class="theme-card__preview">
+            <div class="theme-card__preview-bg" style="background: #0A0A0A;"></div>
+            <div class="theme-card__preview-content" style="color: #FAF9F7;">
+              <div class="theme-card__preview-name">ELARA KEATS</div>
+              <div class="theme-card__preview-stats">5' 11" / 180cm</div>
+            </div>
+          </div>
+          <div class="theme-card__name">Noir</div>
+          <div class="theme-card__badge theme-card__badge--pro">Studio+</div>
+          <div class="theme-card__lock">🔒</div>
+        </div>
+
+        <div class="theme-card" data-theme="studio" data-pro="true">
+          <div class="theme-card__preview">
+            <div class="theme-card__preview-bg" style="background: #F4F2F0;"></div>
+            <div class="theme-card__preview-content">
+              <div class="theme-card__preview-name">ELARA KEATS</div>
+              <div class="theme-card__preview-stats">5' 11" / 180cm</div>
+            </div>
+          </div>
+          <div class="theme-card__name">Studio</div>
+          <div class="theme-card__badge theme-card__badge--pro">Studio+</div>
+          <div class="theme-card__lock">🔒</div>
+        </div>
+
+        <div class="theme-card" data-theme="archive" data-pro="true">
+          <div class="theme-card__preview">
+            <div class="theme-card__preview-bg" style="background: #F5E6D3;"></div>
+            <div class="theme-card__preview-content">
+              <div class="theme-card__preview-name">ELARA KEATS</div>
+              <div class="theme-card__preview-stats">5' 11" / 180cm</div>
+            </div>
+          </div>
+          <div class="theme-card__name">Archive</div>
+          <div class="theme-card__badge theme-card__badge--pro">Studio+</div>
+          <div class="theme-card__lock">🔒</div>
+        </div>
+
+        <div class="theme-card" data-theme="slate" data-pro="true">
+          <div class="theme-card__preview">
+            <div class="theme-card__preview-bg" style="background: #1A1A1A;"></div>
+            <div class="theme-card__preview-content" style="color: #ECF0F1;">
+              <div class="theme-card__preview-name">ELARA KEATS</div>
+              <div class="theme-card__preview-stats">5' 11" / 180cm</div>
+            </div>
+          </div>
+          <div class="theme-card__name">Slate</div>
+          <div class="theme-card__badge theme-card__badge--pro">Studio+</div>
+          <div class="theme-card__lock">🔒</div>
+        </div>
+      </div>
+      <div class="feature-demo__theme-preview-full" id="theme-preview-full" hidden>
+        <button class="feature-demo__theme-close" id="theme-close-full">&times;</button>
+        <div class="feature-demo__theme-preview-content" id="theme-preview-content"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature 3: The Live Portfolio Site -->
+<section class="feature-spread feature-spread--portfolio" id="feature-portfolio">
+  <div class="feature-spread__container">
+    <div class="feature-spread__header">
+      <span class="feature-spread__number">03</span>
+      <h2 class="feature-spread__title">Live Portfolio</h2>
+      <p class="feature-spread__subtitle">Your portfolio. Your brand.</p>
+      <p class="feature-spread__description">Free: Beautiful portfolio with Pholio branding. Studio+: Fully branded,
+        analytics included.</p>
+    </div>
+
+    <div class="feature-demo feature-demo--portfolio">
+      <!-- Enhanced Toggle with Visual Indicators -->
+      <div class="feature-demo__portfolio-toggle">
+        <button class="feature-demo__toggle-btn feature-demo__toggle-btn--active" data-view="free"
+          aria-label="View Free Portfolio">
+          <span class="toggle-btn__label">Free Portfolio</span>
+          <span class="toggle-btn__badge">Pholio Branding</span>
+        </button>
+        <button class="feature-demo__toggle-btn" data-view="pro" aria-label="View Studio+ Portfolio">
+          <span class="toggle-btn__label">Studio+ Portfolio</span>
+          <span class="toggle-btn__badge toggle-btn__badge--pro">No Branding</span>
+        </button>
+      </div>
+
+      <!-- Morphing Portfolio Card Container -->
+      <div class="feature-demo__portfolio-preview" id="portfolio-preview-container">
+        <div class="feature-demo__portfolio-frame" id="portfolio-frame" data-state="free">
+          <!-- Portfolio Header with Morphing Brand -->
+          <div class="feature-demo__portfolio-header">
+            <div class="feature-demo__portfolio-brand">
+              <span class="feature-demo__portfolio-brand-name" id="portfolio-brand-name">Elara Keats</span>
+              <span class="feature-demo__portfolio-brand-zipsite" id="portfolio-brand-zipsite">— Pholio</span>
+              <span class="feature-demo__portfolio-url" id="portfolio-url" aria-hidden="true">pholio.me/elara-k</span>
+            </div>
+            <div class="feature-demo__portfolio-badge" id="portfolio-badge" aria-hidden="true">
+              <span class="portfolio-badge__icon">✨</span>
+              <span class="portfolio-badge__text">Studio+</span>
+            </div>
+          </div>
+
+          <!-- Hero Image with Gallery Preview -->
+          <div class="feature-demo__portfolio-hero">
+            <div class="feature-demo__portfolio-hero-placeholder"></div>
+            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=1200&q=80"
+              alt="Portfolio hero" class="feature-demo__portfolio-hero-img" loading="lazy">
+            <div class="feature-demo__portfolio-gallery-preview" id="portfolio-gallery-preview" aria-hidden="true">
+              <div class="gallery-preview__item"></div>
+              <div class="gallery-preview__item"></div>
+              <div class="gallery-preview__item"></div>
+            </div>
+          </div>
+
+          <!-- Portfolio Content with Staggered Reveal -->
+          <div class="feature-demo__portfolio-content">
+            <div class="feature-demo__portfolio-stats" data-reveal="stats">
+              <div class="feature-demo__portfolio-stat" data-reveal-item>
+                <span class="stat-label">Height</span>
+                <span class="stat-value">5' 11" / 180cm</span>
+              </div>
+              <div class="feature-demo__portfolio-stat" data-reveal-item>
+                <span class="stat-label">Measurements</span>
+                <span class="stat-value">32-25-35</span>
+              </div>
+              <div class="feature-demo__portfolio-stat" data-reveal-item>
+                <span class="stat-label">Location</span>
+                <span class="stat-value">Los Angeles, CA</span>
+              </div>
+            </div>
+
+            <div class="feature-demo__portfolio-bio" data-reveal="bio">
+              <p>Elara Keats brings a refined editorial sensibility to every project. Based in Los Angeles, she
+                seamlessly transitions between high-fashion editorials and commercial campaigns.</p>
+            </div>
+
+            <!-- Pro Features with Animated Reveal -->
+            <div class="feature-demo__portfolio-features" id="portfolio-features" data-reveal="features">
+              <div class="feature-demo__portfolio-feature" data-reveal-item>
+                <span class="feature-demo__portfolio-feature-icon">✓</span>
+                <span>Custom themes available</span>
+              </div>
+              <div class="feature-demo__portfolio-feature" data-reveal-item>
+                <span class="feature-demo__portfolio-feature-icon">✓</span>
+                <span>Analytics dashboard</span>
+              </div>
+              <div class="feature-demo__portfolio-feature feature-demo__portfolio-feature--pro" data-reveal-item
+                aria-hidden="true">
+                <span class="feature-demo__portfolio-feature-icon">⭐</span>
+                <span>Custom domain</span>
+              </div>
+              <div class="feature-demo__portfolio-feature feature-demo__portfolio-feature--pro" data-reveal-item
+                aria-hidden="true">
+                <span class="feature-demo__portfolio-feature-icon">📊</span>
+                <span>Advanced analytics</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pro Overlay Indicators -->
+          <div class="feature-demo__portfolio-pro-overlay" id="portfolio-pro-overlay" aria-hidden="true">
+            <div class="pro-overlay__item">
+              <span class="pro-overlay__icon">🔗</span>
+              <span class="pro-overlay__text">Custom URL</span>
+            </div>
+            <div class="pro-overlay__item">
+              <span class="pro-overlay__icon">📈</span>
+              <span class="pro-overlay__text">Analytics</span>
+            </div>
+            <div class="pro-overlay__item">
+              <span class="pro-overlay__icon">🎨</span>
+              <span class="pro-overlay__text">No Branding</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature 4: The Agency Dashboard -->
+<section class="feature-spread feature-spread--dashboard" id="feature-dashboard">
+  <div class="feature-spread__container">
+    <div class="feature-spread__header">
+      <span class="feature-spread__number">04</span>
+      <h2 class="feature-spread__title">Agency Dashboard</h2>
+      <p class="feature-spread__subtitle">Powerful search. Instant results.</p>
+      <p class="feature-spread__description">Filter your talent roster by location, height, measurements, and more. Find
+        the perfect model in seconds.</p>
+    </div>
+
+    <div class="feature-demo feature-demo--filters">
+      <div class="feature-demo__filters-layout">
+        <!-- Left: Filter Panel -->
+        <div class="feature-demo__filters-panel">
+          <div class="feature-demo__filters-panel-header">
+            <h3 class="feature-demo__filters-title">Filters</h3>
+            <button class="feature-demo__clear-filters" id="clear-filters" type="button" aria-label="Clear all filters">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+              <span>Clear</span>
+            </button>
+          </div>
+          
+          <!-- Search Bar -->
+          <div class="feature-demo__filter-group">
+            <label class="feature-demo__filter-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+              <span>Search</span>
+            </label>
+            <input type="text" class="feature-demo__filter-input feature-demo__filter-input--search" id="filter-search" placeholder="Search by name...">
+          </div>
+
+          <div class="feature-demo__filter-group">
+            <label class="feature-demo__filter-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Location</span>
+            </label>
+            <select class="feature-demo__filter-input" id="filter-location">
+              <option value="">All Locations</option>
+              <option value="NYC">New York, NY</option>
+              <option value="LA">Los Angeles, CA</option>
+              <option value="Miami">Miami, FL</option>
+              <option value="Chicago">Chicago, IL</option>
+            </select>
+          </div>
+          
+          <div class="feature-demo__filter-group">
+            <label class="feature-demo__filter-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+              <span>Height (minimum)</span>
+            </label>
+            <div class="feature-demo__slider-wrapper">
+              <input type="range" class="feature-demo__filter-slider" id="filter-height" min="60" max="78" value="60" step="1">
+              <div class="feature-demo__filter-value" id="height-value">5' 0"</div>
+            </div>
+          </div>
+          
+          <div class="feature-demo__filter-group">
+            <label class="feature-demo__filter-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="9" y1="9" x2="15" y2="9"></line>
+                <line x1="9" y1="15" x2="15" y2="15"></line>
+              </svg>
+              <span>Measurements</span>
+            </label>
+            <input type="text" class="feature-demo__filter-input" id="filter-measurements" placeholder="e.g., 32-25-35">
+          </div>
+          
+          <div class="feature-demo__filter-group">
+            <label class="feature-demo__filter-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5"></path>
+                <path d="M2 12l10 5 10-5"></path>
+              </svg>
+              <span>Specializations</span>
+            </label>
+            <div class="feature-demo__filter-checkboxes">
+              <label class="feature-demo__checkbox-label">
+                <input type="checkbox" value="editorial" class="filter-specialization">
+                <span>Editorial</span>
+              </label>
+              <label class="feature-demo__checkbox-label">
+                <input type="checkbox" value="runway" class="filter-specialization">
+                <span>Runway</span>
+              </label>
+              <label class="feature-demo__checkbox-label">
+                <input type="checkbox" value="commercial" class="filter-specialization">
+                <span>Commercial</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Results Grid -->
+        <div class="feature-demo__filters-results">
+          <div class="feature-demo__results-header">
+            <div class="feature-demo__results-header-left">
+              <span class="feature-demo__results-count" id="results-count">12 models</span>
+              <span class="feature-demo__results-subtitle" id="results-subtitle">Matching your criteria</span>
+            </div>
+            <div class="feature-demo__results-header-right">
+              <label class="feature-demo__sort-label">
+                <span>Sort:</span>
+                <select class="feature-demo__sort-select" id="sort-results">
+                  <option value="name">Name</option>
+                  <option value="height">Height</option>
+                  <option value="location">Location</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="feature-demo__results-grid" id="results-grid">
+            <!-- Talent cards will be populated by JavaScript -->
+          </div>
+          <div class="feature-demo__results-empty" id="results-empty" hidden>
+            <div class="feature-demo__results-empty-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </div>
+            <p class="feature-demo__results-empty-title">No models match your filters</p>
+            <p class="feature-demo__results-empty-hint">Try adjusting your search criteria or clearing filters.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="/scripts/features.js?v=<%= Date.now() %>-<%= Math.random().toString(36).substring(7) %>" defer></script>

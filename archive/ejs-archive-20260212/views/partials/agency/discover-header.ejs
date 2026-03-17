@@ -1,0 +1,252 @@
+<!-- Discover Hero Section - Sentient AI Aesthetic -->
+<section class="discover-hero">
+  <!-- Ambient AI Aura (The Glow) -->
+  <div class="discover-hero__aura-container">
+    <!-- Core Gold Glow -->
+    <div class="discover-hero__aura-core"></div>
+    <!-- Secondary Warmth (Subtle) -->
+    <div class="discover-hero__aura-warmth"></div>
+  </div>
+  
+  <div class="discover-hero__content">
+    <!-- Title (Outside Modal) - Metallic Shimmer -->
+    <div class="discover-hero__title-wrapper">
+      <h1 class="discover-hero__title">Pholio Intelligence</h1>
+    </div>
+    
+    <!-- AI Search Modal Container -->
+    <div class="discover-intelligence-modal" id="discover-intelligence-modal">
+      <div class="discover-intelligence-modal__container">
+        <!-- Header Section (Input) -->
+        <div class="discover-intelligence-modal__header">
+          <div class="discover-intelligence-modal__input-wrapper">
+            <div class="discover-intelligence-modal__ai-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <input 
+              type="text" 
+              placeholder="Ask Pholio AI to find talent (e.g., 'Edgy look for Berlin streetwear')..."
+              class="discover-intelligence-modal__input"
+              id="ai-search-input-main"
+              autocomplete="off"
+            />
+            <button class="discover-intelligence-modal__search-btn" type="button" id="ai-search-submit" aria-label="Search">
+              <span class="discover-intelligence-modal__search-btn-text">Search</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Body Section (2-Column Grid) - Expandable -->
+        <div class="discover-intelligence-modal__body discover-intelligence-modal__body--collapsed" id="discover-intelligence-body">
+          <div class="discover-intelligence-modal__body-inner">
+            <!-- Left Column: Suggested Queries -->
+            <div class="discover-intelligence-modal__column">
+            <h3 class="discover-intelligence-modal__column-title">Suggested Queries</h3>
+            <ul class="discover-intelligence-modal__queries">
+              <li>
+                <button class="discover-intelligence-modal__query-item" data-query="Redhead with freckles, height > 175cm" type="button">
+                  Redhead with freckles, height > 175cm
+                </button>
+              </li>
+              <li>
+                <button class="discover-intelligence-modal__query-item" data-query="Streetwear aesthetic, Berlin based" type="button">
+                  Streetwear aesthetic, Berlin based
+                </button>
+              </li>
+              <li>
+                <button class="discover-intelligence-modal__query-item" data-query="Classic beauty for luxury jewelry campaign" type="button">
+                  Classic beauty for luxury jewelry campaign
+                </button>
+              </li>
+              <li>
+                <button class="discover-intelligence-modal__query-item" data-query="High fashion editorial, unique features" type="button">
+                  High fashion editorial, unique features
+                </button>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Right Column: AI Capabilities -->
+          <div class="discover-intelligence-modal__column">
+            <h3 class="discover-intelligence-modal__column-title">AI Capabilities</h3>
+            <p class="discover-intelligence-modal__description">
+              Pholio AI understands context, style, and physical attributes.
+            </p>
+            <div class="discover-intelligence-modal__chips">
+              <span class="discover-intelligence-modal__chip">Find red hair</span>
+              <span class="discover-intelligence-modal__chip">Runway ready</span>
+              <span class="discover-intelligence-modal__chip">Looks like Elara</span>
+              <span class="discover-intelligence-modal__chip">Available in Paris</span>
+              <span class="discover-intelligence-modal__chip">Streetwear vibe</span>
+              <span class="discover-intelligence-modal__chip">Lives in Berlin</span>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI Search Modal -->
+<div class="discover-modal" id="ai-search-modal" style="display: none;">
+  <div class="discover-modal__overlay" id="modal-overlay"></div>
+  <div class="discover-modal__container">
+    <div class="discover-modal__content">
+      <!-- Header -->
+      <div class="discover-modal__header">
+        <h2 class="discover-modal__title discover-title">Ask Pholio Intelligence</h2>
+        <button class="discover-modal__close" id="ai-search-close" type="button" aria-label="Close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Hero Search Input -->
+      <div class="discover-modal__hero-search">
+        <div class="discover-modal__input-wrapper">
+          <svg class="discover-modal__input-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+            <circle cx="12" cy="12" r="1" fill="currentColor"/>
+            <circle cx="6" cy="6" r="0.5" fill="currentColor"/>
+            <circle cx="18" cy="6" r="0.5" fill="currentColor"/>
+            <circle cx="6" cy="18" r="0.5" fill="currentColor"/>
+            <circle cx="18" cy="18" r="0.5" fill="currentColor"/>
+          </svg>
+          <input 
+            type="text" 
+            placeholder="Describe the face you are looking for..."
+            class="discover-modal__input discover-modal__input--hero"
+            id="ai-search-input"
+            autocomplete="off"
+          />
+        </div>
+        
+        <!-- Quick Tags -->
+        <div class="discover-modal__quick-tags">
+          <button class="discover-modal__quick-tag" data-query="Redhead" type="button">Redhead</button>
+          <button class="discover-modal__quick-tag" data-query="Freckles" type="button">Freckles</button>
+          <button class="discover-modal__quick-tag" data-query="Edgy" type="button">Edgy</button>
+          <button class="discover-modal__quick-tag" data-query="Berlin" type="button">Berlin</button>
+          <button class="discover-modal__quick-tag" data-query="Streetwear" type="button">Streetwear</button>
+          <button class="discover-modal__quick-tag" data-query="High fashion" type="button">High fashion</button>
+        </div>
+      </div>
+      
+      <!-- AI Thinking Indicator -->
+      <div class="discover-modal__thinking" id="ai-thinking" style="display: none;">
+        <div class="discover-modal__thinking-animation"></div>
+        <p class="discover-modal__thinking-text">
+          Analyzing <span id="profile-count">10,247</span> profiles...
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- View Controls & Results Count -->
+<section class="discover-controls">
+  <div class="discover-controls__left">
+    <div class="discover-controls__results" id="discover-results-count">
+      <!-- Results count will be populated by JavaScript -->
+    </div>
+    <div class="discover-controls__view-toggle" role="group" aria-label="View mode">
+      <button 
+        type="button" 
+        class="discover-controls__view-btn discover-controls__view-btn--active" 
+        data-view="grid"
+        aria-label="Grid view"
+        title="Grid view"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7"/>
+          <rect x="14" y="3" width="7" height="7"/>
+          <rect x="14" y="14" width="7" height="7"/>
+          <rect x="3" y="14" width="7" height="7"/>
+        </svg>
+      </button>
+      <button 
+        type="button" 
+        class="discover-controls__view-btn" 
+        data-view="list"
+        aria-label="List view"
+        title="List view"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="8" y1="6" x2="21" y2="6"/>
+          <line x1="8" y1="12" x2="21" y2="12"/>
+          <line x1="8" y1="18" x2="21" y2="18"/>
+          <line x1="3" y1="6" x2="3.01" y2="6"/>
+          <line x1="3" y1="12" x2="3.01" y2="12"/>
+          <line x1="3" y1="18" x2="3.01" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="discover-controls__right">
+    <div class="discover-controls__sort">
+      <label class="discover-controls__sort-label">Sort:</label>
+      <div class="discover-sort-dropdown" id="discover-sort-dropdown">
+        <button 
+          type="button" 
+          class="discover-sort-dropdown__trigger" 
+          id="discover-sort-trigger"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <span class="discover-sort-dropdown__trigger-text" id="discover-sort-trigger-text">Relevance</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="discover-sort-dropdown__menu" id="discover-sort-menu" role="menu">
+          <button 
+            type="button" 
+            class="discover-sort-dropdown__item discover-sort-dropdown__item--active" 
+            data-sort="relevance"
+            role="menuitem"
+          >
+            <span>Relevance</span>
+            <svg class="discover-sort-dropdown__check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </button>
+          <button 
+            type="button" 
+            class="discover-sort-dropdown__item" 
+            data-sort="newest"
+            role="menuitem"
+          >
+            <span>Newest First</span>
+            <svg class="discover-sort-dropdown__check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </button>
+          <button 
+            type="button" 
+            class="discover-sort-dropdown__item" 
+            data-sort="az"
+            role="menuitem"
+          >
+            <span>A-Z</span>
+            <svg class="discover-sort-dropdown__check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
