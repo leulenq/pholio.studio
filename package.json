@@ -1,7 +1,7 @@
 {
   "name": "Pholio",
   "version": "1.0.0",
-  "description": "Pholio.studio yo",
+  "description": "Pholio.studio",
   "main": "server.js",
   "type": "commonjs",
   "scripts": {
